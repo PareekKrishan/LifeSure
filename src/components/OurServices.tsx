@@ -8,13 +8,13 @@ import CottageIcon from '@mui/icons-material/Cottage';
 
 
 const cardData = [
-    { serviceName: 'Life Insurance', img: 'public/img/blog-3.png', svgIcon: < GroupsIcon fontSize='large' /> },
+    { serviceName: 'Life Insurance', img: '/img/blog-3.png', svgIcon: < GroupsIcon fontSize='large' /> },
 
-    { serviceName: 'Health Insurance', img: 'public/img/blog-4.png', svgIcon: <MedicationIcon fontSize='large' /> },
+    { serviceName: 'Health Insurance', img: '/img/blog-4.png', svgIcon: <MedicationIcon fontSize='large' /> },
 
-    { serviceName: 'Car Insurance', img: 'public/img/blog-1.png', svgIcon: <DirectionsCarIcon fontSize='large' /> },
+    { serviceName: 'Car Insurance', img: '/img/blog-1.png', svgIcon: <DirectionsCarIcon fontSize='large' /> },
 
-    { serviceName: 'Home Insurance', img: 'public/img/blog-2.png', svgIcon: <CottageIcon fontSize='large' /> },
+    { serviceName: 'Home Insurance', img: '/img/blog-2.png', svgIcon: <CottageIcon fontSize='large' /> },
 ]
 
 const OurServices = () => {

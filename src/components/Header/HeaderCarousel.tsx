@@ -263,7 +263,7 @@ const HeaderCarousel = () => {
                             >
 
                                 <Box component='img'
-                                    src='public/img/carousel-2.png'
+                                    src='/img/carousel-2.png'
                                     alt='carousel-img'
 
                                     sx={{

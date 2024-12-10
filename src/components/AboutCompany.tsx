@@ -102,7 +102,7 @@ const AboutCompany = () => {
                             position: 'relative'
                         }}>
                             <img
-                                src='public/img/about-1.png'
+                                src='/img/about-1.png'
                                 style={{
                                     width: "100%",
                                     height: "100%",
