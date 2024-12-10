@@ -1,9 +1,9 @@
-import { Box, Button, Card, CardContent, Grid, Typography } from '@mui/material'
+import { Box, Button, Card, CardContent, Typography } from '@mui/material'
 import HandshakeIcon from '@mui/icons-material/Handshake';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import HeadphonesIcon from '@mui/icons-material/Headphones';
-import React from 'react'
+
 
 const cardData = [
     { feature: 'Trusted Company', logo: <HandshakeIcon sx={{ fontSize: 70 }} /> },
