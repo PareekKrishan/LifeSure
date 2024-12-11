@@ -6,6 +6,7 @@ import OurFeatures from './components/OurFeatures'
 import AboutCompany from './components/AboutCompany'
 import OurServices from './components/OurServices'
 import QuestionSection from './components/Header/QuestionSection'
+import BlogSection from './components/BlogSection'
 
 const theme = createTheme({
 
@@ -46,6 +47,8 @@ function App() {
         <OurServices />
 
         <QuestionSection />
+
+        <BlogSection />
 
 
       </ThemeProvider >
