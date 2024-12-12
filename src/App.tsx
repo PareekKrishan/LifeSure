@@ -7,6 +7,7 @@ import AboutCompany from './components/AboutCompany'
 import OurServices from './components/OurServices'
 import QuestionSection from './components/Header/QuestionSection'
 import BlogSection from './components/BlogSection'
+import OurTeam from './components/OurTeam'
 
 const theme = createTheme({
 
@@ -49,6 +50,8 @@ function App() {
         <QuestionSection />
 
         <BlogSection />
+
+        <OurTeam />
 
 
       </ThemeProvider >

@@ -1,21 +1,37 @@
-import { Box, Button, Card, CardContent, Typography } from "@mui/material"
-import PersonIcon from '@mui/icons-material/Person';
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import CommentIcon from '@mui/icons-material/Comment';
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-
-
-
-
+import { Box, Card, CardContent, Typography } from "@mui/material"
+import FacebookIcon from '@mui/icons-material/Facebook';
+import XIcon from '@mui/icons-material/X';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const cardData = [
-    { imgSrc: "img/blog-1.png" },
-    { imgSrc: "img/blog-2.png" },
-    { imgSrc: "img/blog-3.png" },
+    { imgSrc: 'img/team-1.jpg' },
+    { imgSrc: 'img/team-2.jpg' },
+    { imgSrc: 'img/team-3.jpg' },
+    { imgSrc: 'img/team-4.jpg' },
 ]
 
 
-const BlogSection = () => {
+const iconBoxStyle = {
+    height: '35px',
+    width: '35px',
+    bgcolor: '#094991',
+    mb: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '50%',
+    padding: '10px',
+    boxSizing: 'border-box',
+    transition: 'background-color 0.3s ease',
+
+    '&:hover': {
+        bgcolor: '#16243d',
+    }
+};
+
+
+const OurTeam = () => {
     return (
         <>
 
@@ -50,7 +66,7 @@ const BlogSection = () => {
                             mb={'8px'}
                             fontWeight={500}
                         >
-                            From Blog
+                            Our Team
                         </Typography>
 
                         <Typography
@@ -60,7 +76,7 @@ const BlogSection = () => {
                             fontSize={{ xs: '32px', sm: '44px', md: '56px' }}
                             mb={'24px'}
                         >
-                            News and Updates
+                            Meat Our Expert Team Members
                         </Typography>
 
                         <Typography
@@ -74,31 +90,32 @@ const BlogSection = () => {
                     </Box>
 
 
+
+
                     {/*Card-Section*/}
 
                     <Box
                         display={'grid'}
-                        gap={2}
+                        gap={1}
                         gridTemplateColumns={{
                             xs: '1fr',
                             sm: '1fr 1fr',
-                            md: '1fr 1fr 1fr',
-                            lg: '1fr 1fr 1fr',
-                            xl: '1fr 1fr 1fr',
+                            md: '1fr 1fr ',
+                            lg: '1fr 1fr 1fr 1fr',
+                            xl: '1fr 1fr 1fr 1fr',
                         }}
                         mx={'auto'}
 
                     >
 
-
                         {cardData.map((item, index) => (
                             <Card key={index}
                                 sx={{
                                     mt: '24px',
-                                    bgcolor: "white",
+                                    bgcolor: 'white',
                                     borderRadius: '10px',
                                     boxShadow: 'none',
-                                    transition: '0.3 ease-in-out',
+
 
                                     '&:hover': {
 
@@ -108,17 +125,21 @@ const BlogSection = () => {
                                         },
 
                                         '& .textBox': {
-                                            bgcolor: 'white',
-                                            boxShadow: 'rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px',
+                                            bgcolor: '#16243d'
+                                        },
+
+                                        '& .imgBox .image': {
+                                            transform: 'scale(1.1)',
+                                            transition: 'transform 0.3s ease'
+                                        },
+
+                                        '& .imgBox .mediaIconBox': {
+                                            marginBottom: 0,
+                                            opacity: 1,
                                         }
-
-
                                     }
-
                                 }}
                             >
-
-
 
                                 <CardContent>
 
@@ -141,7 +162,7 @@ const BlogSection = () => {
                                                 left: 0,
                                                 width: '100%',
                                                 height: '100%',
-                                                bgcolor: '#015fc933',
+                                                bgcolor: '#ffffff40',
                                                 borderRadius: '10px 10px 0px 0px',
                                                 zIndex: 1,
                                                 transition: 'top 0.5s ease'
@@ -151,7 +172,7 @@ const BlogSection = () => {
 
                                         }}
                                     >
-                                        <img
+                                        <img className="image"
                                             src={item.imgSrc}
                                             style={{
                                                 width: "100%",
@@ -161,120 +182,71 @@ const BlogSection = () => {
                                             }}
                                         />
 
-                                        <Box className='businessTag'
+
+                                        {/*Media-Icon-Box */}
+
+                                        <Box className='mediaIconBox'
                                             sx={{
                                                 position: 'absolute',
-                                                bottom: 0,
-                                                right: 0,
-                                                bgcolor: '#015fc9',
-                                                color: 'white',
-                                                borderTopLeftRadius: '10px',
-                                                padding: '8px 24px',
-                                                display: 'flex',
-                                                alignContent: 'center',
-                                                justifyContent: 'center',
-                                                boxSizing: 'border-box',
+                                                bottom: '20px',
+                                                right: '20px',
+                                                transition: '0.8s',
+                                                marginBottom: '-100%',
+                                                opacity: 0,
                                                 zIndex: 11
                                             }}
-
                                         >
-                                            <Typography>Business</Typography>
+                                            <Box sx={iconBoxStyle}>  <XIcon sx={{ color: 'white' }} /></Box>
 
+
+                                            <Box sx={iconBoxStyle}><InstagramIcon sx={{ color: 'white' }} /></Box>
+
+
+                                            <Box sx={iconBoxStyle}><FacebookIcon sx={{ color: 'white' }} /></Box>
+
+
+                                            <Box sx={iconBoxStyle}><LinkedInIcon sx={{ color: 'white' }} /></Box>
                                         </Box>
 
 
                                     </Box>
 
+
                                     <Box className='textBox'
                                         sx={{
                                             padding: '24px',
-                                            bgcolor: '#f2f5f9',
+                                            bgcolor: '#015fc9',
                                             borderBottomLeftRadius: '10px',
                                             borderBottomRightRadius: '10px',
 
                                         }}
                                     >
-                                        {/* flex-box for icon*/}
 
-                                        <Box
-                                            sx={{
-                                                display: 'flex',
-                                                alignContent: 'center',
-                                                justifyContent: 'space-between',
-                                                mb: '16px'
-                                            }}
-                                        >
-
-                                            <Box sx={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                                <PersonIcon sx={{ color: '#015fc9', fontSize: '15px' }} />
-                                                <Typography variant="body2" color="#787878" fontSize={'10px'}>Martin.C</Typography>
-                                            </Box>
-
-                                            <Box sx={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                                <CalendarMonthIcon sx={{ color: '#015fc9', fontSize: '15px' }} />
-                                                <Typography variant="body2" color="#787878" fontSize={'10px'}>29 Aug. 2025</Typography>
-                                            </Box>
-
-                                            <Box sx={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                                                <CommentIcon sx={{ color: '#015fc9', fontSize: '15px' }} />
-                                                <Typography variant="body2" color="#787878" fontSize={'10px'}>6 Comments</Typography>
-                                            </Box>
-
-                                        </Box>
-
-                                        <Typography variant="h6" mb={'16px'}
-                                            sx={{
-                                                cursor: 'pointer',
-                                                '&:hover': {
-                                                    color: '#015fc9'
-                                                },
-                                            }}
-                                        >
-                                            Leverage agile frameworks to provide
-                                        </Typography>
-
-                                        <Typography variant='body1' mb={'16px'} color="#787878">
-                                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius libero soluta impedit eligendi? Quibusdam, laudantium.
-                                        </Typography>
-
-                                        <Button
-                                            endIcon={<ArrowForwardIcon />}
-                                            sx={{
-                                                color: 'black',
-                                                fontWeight: 600,
-
-                                                '&:hover': {
-                                                    color: '#015fc9'
-                                                }
-                                            }}
-                                        >
-                                            Read More
-                                        </Button>
-
-
-
+                                        <Typography variant="h6" color="white">David james</Typography>
+                                        <Typography variant="body1" color="white">Profession</Typography>
                                     </Box>
 
 
                                 </CardContent>
 
-
-
                             </Card>
+
+
+
                         ))}
-
-
-
 
 
                     </Box>
 
+
+
                 </Box>
 
-            </Box>
 
+
+            </Box>
         </>
     )
 }
 
-export default BlogSection
+export default OurTeam
