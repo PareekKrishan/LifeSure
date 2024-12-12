@@ -136,8 +136,9 @@ const HeaderCarousel = () => {
 
         infinite: true,
         speed: 500,
-        Swipe: true,
-        Fade: false,
+
+        fade: true,
+        waitForAnimate: false,
 
         slidesToShow: 1,
         slidesToScroll: 1,
