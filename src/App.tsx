@@ -5,10 +5,14 @@ import Header from './components/Header/Header'
 import OurFeatures from './components/OurFeatures'
 import AboutCompany from './components/AboutCompany'
 import OurServices from './components/OurServices'
-import QuestionSection from './components/Header/QuestionSection'
+import QuestionSection from './components/QuestionSection'
 import BlogSection from './components/BlogSection'
 import OurTeam from './components/OurTeam'
 import TestimonialSection from './components/TestimonialSection'
+import Footer from './components/Footer'
+
+
+
 
 const theme = createTheme({
 
@@ -55,6 +59,10 @@ function App() {
         <OurTeam />
 
         <TestimonialSection />
+
+        <Footer />
+
+
 
 
       </ThemeProvider >
