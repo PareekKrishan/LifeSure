@@ -70,7 +70,8 @@ const TestimonialSection = () => {
                 >
 
 
-                    <Box textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'} mb={'48px'}>
+                    <Box data-aos='zoom-in-up' data-aos-delay='200'
+                        textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'} mb={'48px'}>
 
 
                         <Typography
@@ -122,7 +123,7 @@ const TestimonialSection = () => {
                             {/*Card-Section */}
 
                             {cardData.map((item, index) => (
-                                <Box
+                                <Box data-aos='zoom-in-down' data-aos-delay='200'
                                     sx={{
                                         width: {
                                             lg: '635.5px',
@@ -253,7 +254,7 @@ export default TestimonialSection
 const PrevArrow = (props: any) => {
     const { onClick } = props;
     return (
-        <Box
+        <Box data-aos='fade-left'
             onClick={onClick}
             sx={{
                 position: 'absolute',
@@ -287,7 +288,7 @@ const PrevArrow = (props: any) => {
 const NextArrow = (props: any) => {
     const { onClick } = props;
     return (
-        <Box
+        <Box data-aos='fade-right'
             onClick={onClick}
             sx={{
                 position: 'absolute',

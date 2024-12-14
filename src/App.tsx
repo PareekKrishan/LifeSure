@@ -1,5 +1,6 @@
 import { createTheme, ThemeProvider } from '@mui/material'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Header from './components/Header/Header'
 import OurFeatures from './components/OurFeatures'
@@ -10,6 +11,8 @@ import BlogSection from './components/BlogSection'
 import OurTeam from './components/OurTeam'
 import TestimonialSection from './components/TestimonialSection'
 import Footer from './components/Footer'
+import { useEffect } from 'react'
+import HeaderCarousel from './components/HeaderCarousel';
 
 
 
@@ -38,6 +41,15 @@ const theme = createTheme({
 
 function App() {
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+
+    });
+  }, []);
+
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -45,7 +57,7 @@ function App() {
 
 
         <Header />
-
+        <HeaderCarousel />
         <OurFeatures />
 
         <AboutCompany />

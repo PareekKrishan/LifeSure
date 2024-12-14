@@ -81,7 +81,7 @@ const CollapseNavbar = () => {
     return (
         <>
 
-            <Box sx={{
+            <Box data-aos='fade-left' sx={{
 
                 display: {
                     xs: "flex",

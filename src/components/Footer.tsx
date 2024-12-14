@@ -69,7 +69,7 @@ const Footer = () => {
     return (
         <>
             {/* Outer-container*/}
-            <Box sx={{ padding: '48px 24px', bgcolor: '#16243d', }}>
+            <Box data-aos="fade-up" sx={{ padding: '48px 24px', bgcolor: '#16243d', }}>
 
 
                 {/* inner-main-container */}

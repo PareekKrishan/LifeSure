@@ -24,7 +24,7 @@ const AboutCompany = () => {
                 >
 
                     {/* Left-Section */}
-                    <Box sx={{ flex: 1, padding: { sm: '48px', xs: '24px' }, borderRadius: '10px', bgcolor: "white" }}>
+                    <Box data-aos='fade-down-right' data-aos-delay='200' sx={{ flex: 1, padding: { sm: '48px', xs: '24px' }, borderRadius: '10px', bgcolor: "white" }}>
 
                         <Typography variant="h6" color="primary" mb='8px'>
                             About Our Company
@@ -81,7 +81,7 @@ const AboutCompany = () => {
 
 
                     {/* Right-Section */}
-                    <Box
+                    <Box data-aos='fade-down-left' data-aos-delay='200'
                         sx={{
                             flex: 1,
                             padding: { sm: '48px', xs: '24px' },
@@ -93,7 +93,7 @@ const AboutCompany = () => {
 
                         }}>
 
-                        <Box sx={{
+                        <Box data-aos='flip-left' data-aos-delay='500' sx={{
                             bgcolor: "#f2f5f9",
                             borderRadius: '10px',
                             display: 'flex',

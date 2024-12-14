@@ -45,7 +45,7 @@ const QuestionSection = () => {
                 >
 
                     {/* Left-side-Text-box */}
-                    <Box
+                    <Box data-aos='fade-right' data-aos-delay='200'
                         sx={{
 
                             padding: '0px 24px',
@@ -121,7 +121,7 @@ const QuestionSection = () => {
 
 
                     {/* Right-side-img-box */}
-                    <Box
+                    <Box data-aos='fade-left' data-aos-delay='200'
                         sx={{
 
                             padding: '0px 24px',

@@ -222,7 +222,7 @@ const HeaderCarousel = () => {
                             >
 
 
-                                <Box mt={'24px'}
+                                <Box mt={'24px'} data-aos='fade-right' data-aos-delay='500'
                                     sx={{
                                         gridArea: 'text',
                                         textAlign: { xs: 'center', sm: "left" }
@@ -337,7 +337,7 @@ const HeaderCarousel = () => {
 
 
 
-                                <Box
+                                <Box data-aos='fade-left' data-aos-delay='500'
                                     mt={'24px'}
                                     sx={{
                                         gridArea: 'image',

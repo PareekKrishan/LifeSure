@@ -63,7 +63,7 @@ const NavBar = () => {
         <>
 
 
-            <Box   /* This box is outer of the Navbar */
+            <Box data-aos='fade-left'  /* This box is outer of the Navbar */
                 sx={{
                     display: {
                         xs: "none",

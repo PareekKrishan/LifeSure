@@ -32,7 +32,7 @@ const OurFeatures = () => {
                 >
 
 
-                    <Box textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'}>
+                    <Box textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'} data-aos='fade-up' data-aos-delay='0.2s'>
 
 
                         <Typography
@@ -80,7 +80,7 @@ const OurFeatures = () => {
 
                         {cardData.map((item, index) => (
 
-                            <Card key={index}
+                            <Card key={index} data-aos='flip-left' data-aos-delay='800'
                                 sx={{
                                     mt: '24px',
                                     padding: '0px 12px',

@@ -57,7 +57,8 @@ const OurTeam = () => {
                 >
 
 
-                    <Box textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'}>
+                    <Box data-aos='zoom-in-down' data-aos-delay='500'
+                        textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'}>
 
 
                         <Typography
@@ -109,7 +110,10 @@ const OurTeam = () => {
                     >
 
                         {cardData.map((item, index) => (
-                            <Card key={index}
+                            <Card data-aos="flip-right"
+                                data-aos-easing="ease-out-cubic"
+                                data-aos-duration="2000"
+                                key={index}
                                 sx={{
                                     mt: '24px',
                                     bgcolor: 'white',

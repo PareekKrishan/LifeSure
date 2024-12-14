@@ -41,7 +41,9 @@ const BlogSection = () => {
                 >
 
 
-                    <Box textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'}>
+                    <Box data-aos='zoom-in-down' data-aos-delay='200'
+                        textAlign={'center'} maxWidth={'800px'} mx={'auto'} pb={'48px'}
+                    >
 
 
                         <Typography
@@ -92,7 +94,7 @@ const BlogSection = () => {
 
 
                         {cardData.map((item, index) => (
-                            <Card key={index}
+                            <Card key={index} data-aos="zoom-out-down" data-aos-delay='500'
                                 sx={{
                                     mt: '24px',
                                     bgcolor: "white",
