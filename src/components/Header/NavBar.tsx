@@ -6,11 +6,34 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { ScrollContext } from './ScrollContext';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import { NavLink } from 'react-router-dom';
 
 
-const links = ['Home', 'About', 'Services', 'Blog', 'Contact']
+const links = [
+    { name: 'Home', path: "/" },
 
-const menu = ['Our Features', 'Our Team', 'Testimonial', 'FAQs', '404 Page']
+    { name: 'About', path: "/about-us" },
+
+    { name: 'Services', path: "/our-services" },
+
+    { name: 'Blog', path: "/our-blog" },
+
+    { name: 'Contact', path: "/contact-us" },
+]
+
+const menu = [
+
+    { name: 'our Features', path: "/our-features" },
+
+    { name: 'Our Team', path: "/our-team" },
+
+    { name: 'Testimonial', path: "/testimonial" },
+
+    { name: 'FAQs', path: "/faqs" },
+
+    { name: '404 page', path: "/404" },
+
+]
 
 const NavBar = () => {
 
@@ -58,12 +81,16 @@ const NavBar = () => {
 
 
 
+
+
+
+
     return (
 
         <>
 
 
-            <Box data-aos='fade-left'  /* This box is outer of the Navbar */
+            <Box   /* This box is outer of the Navbar */
                 sx={{
                     display: {
                         xs: "none",
@@ -124,26 +151,57 @@ const NavBar = () => {
 
 
                         <Box display={'flex'} gap={1} >
-                            {links.map((link) => (
-                                <Button
-                                    key={link}
-                                    sx={{
-                                        color: '#6c757d',
-                                        '&:hover': {
-                                            color: '#015fc9'
-                                        }
+                            {links.map((link, index) => (
+                                <NavLink
+                                    key={index}
+                                    to={link.path}
+                                    style={({ isActive }) => ({
+                                        color: isActive ? '#015fc9' : '#6c757d',
 
-                                    }}
+
+                                    })}
+
                                 >
-                                    {link}
-                                </Button>
-                            )
-                            )}
 
-                            <Button
+                                    <Button
+
+
+                                        sx={{
+                                            color: 'inherit',
+
+                                            textTransform: "none",
+
+                                            fontSize: '16px',
+                                            fontWeight: 500,
+
+                                            "&:hover": {
+                                                color: "#015fc9",
+
+                                            },
+
+
+                                        }}
+                                    >
+                                        {link.name}
+
+
+                                    </Button>
+
+
+
+                                </NavLink>
+                            ))}
+
+
+                            <Button onClick={handleMenuClick}
                                 endIcon={<KeyboardArrowDownIcon />}
-                                sx={{ color: '#6c757d', '&:hover': { color: '#015fc9' } }}
-                                onClick={handleMenuClick}
+                                sx={{
+                                    color: '#6c757d', textTransform: "none", fontSize: '16px',
+                                    fontWeight: 500,
+
+                                    '&:hover': { color: '#015fc9' }
+                                }}
+
 
                             >
                                 pages
@@ -166,18 +224,33 @@ const NavBar = () => {
                                 }}
                             >
 
-                                {menu.map((item) => (
-                                    <MenuItem onClick={handleMenuClose} key={item}
-                                        sx={{
-                                            "&:hover": {
-                                                backgroundColor: "#015fc9",
-                                                color: "white",
-                                            },
+                                {menu.map((item, index) => (
 
-
-                                            margin: '4px 0px'
+                                    <NavLink
+                                        key={index}
+                                        to={item.path}
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'black'
                                         }}
-                                    >{item}</MenuItem>
+                                    >
+
+
+                                        <MenuItem onClick={handleMenuClose}
+                                            sx={{
+                                                "&:hover": {
+                                                    backgroundColor: "#015fc9",
+                                                    color: "white",
+
+                                                },
+
+
+                                                margin: '4px 0px'
+                                            }}
+                                        >{item.name}</MenuItem>
+
+                                    </NavLink>
+
                                 )
                                 )}
 
@@ -273,9 +346,9 @@ const NavBar = () => {
 
 
 
-// Search page
+            {/*search page */}
 
-            <Slide direction='down' in={isSearchOpen} mountOnEnter unmountOnExit  >
+            < Slide direction='down' in={isSearchOpen} mountOnEnter unmountOnExit >
 
                 <Box zIndex={1111}
                     sx={{
@@ -357,7 +430,7 @@ const NavBar = () => {
                 </Box>
 
 
-            </Slide>
+            </Slide >
 
         </>
     )

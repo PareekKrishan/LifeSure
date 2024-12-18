@@ -4,9 +4,10 @@ import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Search } from '@mui/icons-material';
 import { ScrollContext } from './ScrollContext';
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -20,8 +21,31 @@ import { ScrollContext } from './ScrollContext';
 
 const CollapseNavbar = () => {
 
-    const links = ['Home', 'About', 'Services', 'Blog', 'Contact']
-    const menu = ['Our Features', 'Our Team', 'Testimonial', 'FAQs', '404 Page']
+    const links = [
+        { name: 'Home', path: "/" },
+
+        { name: 'About', path: "/about-us" },
+
+        { name: 'Services', path: "/our-services" },
+
+        { name: 'Blog', path: "/our-blog" },
+
+        { name: 'Contact', path: "/contact-us" },
+    ]
+
+    const menu = [
+
+        { name: 'our Features', path: "/our-features" },
+
+        { name: 'Our Team', path: "/our-team" },
+
+        { name: 'Testimonial', path: "/testimonial" },
+
+        { name: 'FAQs', path: "/faqs" },
+
+        { name: '404 page', path: "/404" },
+
+    ]
 
     //page menu 
     const [pageMenu, setPageMenu] = useState(null);
@@ -78,10 +102,30 @@ const CollapseNavbar = () => {
 
 
 
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            document.body.style.overflow = 'auto';
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+            document.body.style.overflow = 'auto';
+
+        };
+    }, []);
+
+
+
+
+
     return (
         <>
 
-            <Box data-aos='fade-left' sx={{
+            <Box sx={{
 
                 display: {
                     xs: "flex",
@@ -188,18 +232,33 @@ const CollapseNavbar = () => {
                         }}>
 
 
-                        {links.map((link) => (
-                            <Button
-                                key={link}
-                                sx={{
-                                    color: '#6c757d', padding: { sm: '20px 0px', xs: '10px 0px' },
-                                    '&:hover': {
-                                        color: '#015fc9'
-                                    }
-                                }}
+                        {links.map((link, index) => (
+                            <NavLink
+                                key={index}
+                                to={link.path}
+                                style={({ isActive }) => ({
+                                    color: isActive ? '#015fc9' : '#6c757d',
+                                    textTransform: 'none',
+                                })}
+
                             >
-                                {link}
-                            </Button>
+
+                                <Button
+
+                                    sx={{
+                                        color: 'inherit', padding: { sm: '20px 0px', xs: '10px 0px' },
+                                        '&:hover': {
+                                            color: '#015fc9'
+                                        }
+                                    }}
+                                >
+                                    {link.name}
+                                </Button>
+
+
+                            </NavLink>
+
+
                         )
                         )}
 
@@ -239,18 +298,35 @@ const CollapseNavbar = () => {
                             }}
                         >
 
-                            {menu.map((item) => (
-                                <MenuItem onClick={handleMenuClose} key={item}
-                                    sx={{
-                                        "&:hover": {
-                                            backgroundColor: "#015fc9",
-                                            color: "white",
-                                        },
+                            {menu.map((item, index) => (
 
-                                        width: "200px",
-                                        margin: '4px 0px'
+                                <NavLink
+                                    key={index}
+                                    to={item.path}
+
+                                    style={{
+                                        textDecoration: 'none',
+                                        color: '#015fc9'
                                     }}
-                                >{item}</MenuItem>
+
+                                >
+
+                                    <MenuItem onClick={handleMenuClose}
+                                        sx={{
+                                            "&:hover": {
+                                                backgroundColor: "#015fc9",
+                                                color: "white",
+                                            },
+
+                                            width: "200px",
+                                            margin: '4px 0px'
+                                        }}
+                                    >{item.name}
+
+                                    </MenuItem>
+
+                                </NavLink>
+
                             )
                             )}
 
@@ -302,7 +378,7 @@ const CollapseNavbar = () => {
 
 
 
-            {/* Search-page */}
+
 
 
 

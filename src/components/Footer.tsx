@@ -10,6 +10,7 @@ import CallIcon from '@mui/icons-material/Call';
 import TtyIcon from '@mui/icons-material/Tty'
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import CopyrightIcon from '@mui/icons-material/Copyright';
+import { NavLink } from "react-router-dom";
 
 
 
@@ -24,12 +25,12 @@ const instaFooterImg = [
 
 
 const links = [
-    { name: 'About Us' },
-    { name: 'Features' },
-    { name: 'Services' },
-    { name: 'contact' },
-    { name: 'blogs' },
-    { name: "faq's" },
+    { name: 'About Us', path: '/about-us' },
+    { name: 'Features', path: '/our-features' },
+    { name: 'Services', path: '/our-services' },
+    { name: 'contact', path: '/contact-us' },
+    { name: 'blogs', path: '/our-blog' },
+    { name: "faq's", path: '/faqs' },
 
 ]
 
@@ -149,17 +150,30 @@ const Footer = () => {
                                         alignItems={'flex-start'}
                                         width={'100%'}>
 
-
-                                        <Button key={index}
-
-                                            startIcon={<KeyboardArrowRightIcon />}
-                                            sx={{ color: "#787878", '&:hover': { color: '#015fc9' } }}
-
+                                        <NavLink
+                                            key={index}
+                                            to={item.path}
+                                            style={({ isActive }) => ({
+                                                color: isActive ? '#015fc9' : '#787878',
+                                                textTransform: 'none',
+                                            })}
                                         >
 
-                                            {item.name}
 
-                                        </Button>
+                                            <Button
+
+                                                startIcon={<KeyboardArrowRightIcon />}
+                                                sx={{ color: "inherit", '&:hover': { color: '#015fc9' } }}
+
+                                            >
+
+                                                {item.name}
+
+                                            </Button>
+
+
+                                        </NavLink>
+
 
 
                                     </Box>

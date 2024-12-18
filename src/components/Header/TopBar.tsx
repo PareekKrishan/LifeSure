@@ -43,7 +43,7 @@ const TopBar = () => {
         <>
 
 
-            <AppBar data-aos='fade-right'
+            <AppBar
                 sx={{
                     boxShadow: 'none',
                     position: 'fixed',
